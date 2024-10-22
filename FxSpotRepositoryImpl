@@ -1,0 +1,22 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class FxSpotRepositoryImpl implements FxSpotRepository {
+    private List<FXSpot> fxSpots = new ArrayList<>();
+
+    @Override
+    public void addFXSpot(FXSpot fxSpot) {
+        fxSpots.add(fxSpot);
+    }
+
+    @Override
+    public List<FXSpot> getFXSpotsForPair(String currency1, String currency2) {
+        List<FXSpot> pairSpots = new ArrayList<>();
+        for (FXSpot fxSpot : fxSpots) {
+            if (fxSpot.getCurrency1().equals(currency1) && fxSpot.getCurrency2().equals(currency2)) {
+                pairSpots.add(fxSpot);
+            }
+        }
+        return pairSpots;
+    }
+}
