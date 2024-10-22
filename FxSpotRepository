@@ -1,0 +1,6 @@
+import java.util.List;
+
+public interface FxSpotRepository {
+    void addFXSpot(FXSpot fxSpot);
+    List<FXSpot> getFXSpotsForPair(String currency1, String currency2);
+}
